@@ -1,0 +1,7 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files\NUnit 2.4 (Beta 1) for .Net 2.0\bin\nunit.exe</StartProgram>
+    <StartArguments>Mercury.App.Tests.dll</StartArguments>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,47 @@
+﻿<Window x:Class="Mercury.WpfGui.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:uc="clr-namespace:Mercury.WpfGui" 
+    Title="Mercury" 
+    BorderThickness="0"
+    WindowStyle="None" 
+    Background="Transparent"
+    AllowsTransparency="True"
+    Name="wnd" 
+    MouseLeftButtonDown="DragAttempt"
+    Loaded="Window_Loaded" 
+    SizeToContent="WidthAndHeight"
+    KeyboardNavigation.TabNavigation="Cycle"
+    Focusable="False"
+    >
+  <Window.Resources>
+    <Style TargetType="{x:Type Button}">
+      <Style.Triggers>
+        <Trigger Property="IsFocused" Value="True">
+          <Setter Property="Background" Value="LemonChiffon" />
+        </Trigger>
+      </Style.Triggers>
+      <Setter Property="Margin" Value="3" />
+      <Setter Property="FontSize" Value="14" />
+      <Setter Property="Background" Value="AliceBlue" />
+    </Style>
+  </Window.Resources>
+  <Border  Style="{StaticResource mainContentPanelBorder}">
+    <StackPanel Style="{StaticResource mainContentPanel}"
+          HorizontalAlignment="Left"
+          VerticalAlignment="Top"
+          Orientation="Horizontal"
+          Focusable="False">
+      <!--
+      <Button Name="foo">
+        Bar
+      </Button>
+      -->
+      
+      <uc:CatalogItemPickerControl x:Name="ctl1" TabIndex="1">
+      </uc:CatalogItemPickerControl>
+      <uc:CatalogItemPickerControl x:Name="ctl2" TabIndex="2">
+      </uc:CatalogItemPickerControl>
+    </StackPanel>
+  </Border>
+</Window>

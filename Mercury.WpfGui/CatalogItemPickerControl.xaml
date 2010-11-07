@@ -1,0 +1,51 @@
+<UserControl x:Class="Mercury.WpfGui.CatalogItemPickerControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Foreground="White"
+    FontFamily="Colibri"
+    Padding="10"
+    Focusable="True"
+    KeyboardNavigation.IsTabStop="True">
+  <UserControl.Resources>
+    <BitmapImage UriSource="TestIcon.png" x:Key="testIcon" />
+    <Style x:Key="controlBorder">
+      <Setter Property="Border.BorderThickness" Value="0" />
+      <Setter Property="Border.CornerRadius" Value="5" />
+      <Setter Property="Border.Padding" Value="10" />
+      <Setter Property="Border.Focusable" Value="False" />
+      <Setter Property="Border.Background">
+        <Setter.Value>
+          <SolidColorBrush
+            Color="White"
+            Opacity="0.3" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="controlBorderFocused" BasedOn="{StaticResource controlBorder}">
+      <Setter Property="Border.Background">
+        <Setter.Value>
+          <SolidColorBrush
+            Color="White"
+            Opacity="0.5" />
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </UserControl.Resources>
+
+  <Border 
+    Style="{StaticResource controlBorder}"
+    Name="_controlBorder">
+    <StackPanel 
+      Orientation="Vertical"
+      Focusable="False">
+      <Image Source="{StaticResource testIcon}" Name="_icon" />
+      <TextBlock Margin="0,10,0,0" Name="_tb">
+        Visual
+        <Bold>
+          <Underline>Slick</Underline>
+        </Bold>edit
+      </TextBlock>
+    </StackPanel>
+  </Border>
+
+</UserControl>
